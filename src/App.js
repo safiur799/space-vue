@@ -48,7 +48,7 @@ const App = () => {
                     element={<Dashboard missions={missions} />}
                   />
 
-                  <Route path="/login" element={<Login />} />
+                  <Route path="/" element={<Login />} />
                 </Routes>
               </div>
             </div>

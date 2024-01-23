@@ -21,7 +21,7 @@ const Sidebar = () => {
 
         <li className="mb-4">
           <Link
-            to="/login"
+            to="/"
             className="text-white hover:text-gray-300 transition duration-300"
           >
             Login
