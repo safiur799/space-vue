@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState, useEffect } from "react";
+import Login from "./components/Login";
+import Dashboard from "./components/Dashbord";
 
-function App() {
+const App = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [missions, setMissions] = useState([]);
+
+  const handleLogin = () => {
+    setLoggedIn(true);
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://www.ag-grid.com/example-assets/space-mission-data.json"
+        );
+        const data = await response.json();
+        setMissions(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {loggedIn ? (
+        <Dashboard missions={missions} />
+      ) : (
+        <Login onLogin={handleLogin} />
+      )}
     </div>
   );
-}
+};
 
 export default App;
