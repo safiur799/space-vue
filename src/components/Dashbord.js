@@ -36,7 +36,7 @@ const Dashboard = ({ missions }) => {
   ];
 
   return (
-    <div className="min-h-screen p-8">
+    <div className="min-h-screen p-8 " style={{ marginLeft: "300px" }}>
       <h2 className="text-3xl font-semibold mb-6 text-center">
         Space Mission Dashboard
       </h2>

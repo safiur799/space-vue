@@ -15,8 +15,8 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="bg-white p-8 rounded shadow-md w-96">
+    <div className="min-h-screen flex items-center justify-center ">
+      <div className="bg-white p-12 rounded shadow-md w-96 ">
         <h2 className="text-2xl font-semibold mb-4">Login</h2>
         <form>
           <div className="mb-4">
