@@ -53,11 +53,11 @@ the app has a simple login page with hardcoded credentials for demonstration pur
 
 ## UserName
 
-: demo
+demo
 
 ## Password
 
-: password
+password
 
 ## Technologies Used
 
