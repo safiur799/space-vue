@@ -51,9 +51,13 @@ the app has a simple login page with hardcoded credentials for demonstration pur
 
 ## loginCredential
 
-Username: demo
-Password: password
-You can customize the login functionality as needed for your application.
+## UserName
+
+: demo
+
+## Password
+
+: password
 
 ## Technologies Used
 
