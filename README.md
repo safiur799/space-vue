@@ -47,7 +47,9 @@ You may also see any lint errors in the console.
 
 ## Hardcoded Login
 
-he app has a simple login page with hardcoded credentials for demonstration purposes.
+the app has a simple login page with hardcoded credentials for demonstration purposes.
+
+## loginCredential
 
 Username: demo
 Password: password

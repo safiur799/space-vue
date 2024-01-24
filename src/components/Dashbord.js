@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AgGridReact } from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
@@ -12,6 +12,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import CompanySpecificChart from "./CompanySpecificCharts";
+import { countRocketsByYear } from "./RocketCountByYear";
 
 const Dashboard = ({ missions }) => {
   const columnDefs = [
@@ -35,6 +37,8 @@ const Dashboard = ({ missions }) => {
     { name: "Failure", value: failureCount },
   ];
 
+  const RocketData = countRocketsByYear(missions);
+
   return (
     <div className="min-h-screen p-8 " style={{ marginLeft: "300px" }}>
       <h2 className="text-3xl font-semibold mb-6 text-center">
@@ -52,12 +56,18 @@ const Dashboard = ({ missions }) => {
           </BarChart>
         </ResponsiveContainer>
       </div>
-
+      <CompanySpecificChart data={RocketData} />
       <div
         className="ag-theme-alpine mb-8 mt-8"
-        style={{ height: "400px", width: "100%" }}
+        style={{ height: "400px", width: "100%", marginBottom: "24px" }}
       >
-        <AgGridReact columnDefs={columnDefs} rowData={missions}></AgGridReact>
+        <AgGridReact
+          columnDefs={columnDefs}
+          rowData={missions}
+          pagination={true}
+          domLayout="autoHeight"
+          paginationPageSize={10}
+        ></AgGridReact>
       </div>
     </div>
   );
