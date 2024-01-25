@@ -40,7 +40,7 @@ const Dashboard = ({ missions }) => {
   const RocketData = countRocketsByYear(missions);
 
   return (
-    <div className="min-h-screen p-8 " style={{ marginLeft: "300px" }}>
+    <div className="min-h-screen p-8 " style={{ marginLeft: "150px" }}>
       <h2 className="text-3xl font-semibold mb-6 text-center">
         Space Mission Dashboard
       </h2>
@@ -66,7 +66,7 @@ const Dashboard = ({ missions }) => {
           rowData={missions}
           pagination={true}
           domLayout="autoHeight"
-          paginationPageSize={10}
+          paginationPageSize={8}
         ></AgGridReact>
       </div>
     </div>
